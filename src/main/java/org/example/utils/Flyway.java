@@ -1,14 +1,18 @@
-package org.example;
+package org.example.utils;
 
 import lombok.extern.log4j.Log4j2;
 
-@Log4j2
-final class Flyway {
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/SpaceTravel";
-    private static final String BD_USERNAME = "root";
-    private static final String BD_PASSWORD = "root";
+import static org.example.configs.DatabaseConfig.getPassword;
+import static org.example.configs.DatabaseConfig.getUsername;
+import static org.example.configs.DatabaseConfig.getUrl;
 
-    Flyway() {
+@Log4j2
+public final class Flyway {
+    private static final String JDBC_URL = getUrl();
+    private static final String BD_USERNAME = getUsername();
+    private static final String BD_PASSWORD = getPassword();
+
+    public Flyway() {
         this.init();
     }
 
