@@ -3,6 +3,9 @@ package org.example.utils;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 
+import org.example.entity.Client;
+import org.example.entity.Planet;
+import org.example.entity.Ticket;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -28,9 +31,9 @@ public final class HibernateUtil implements AutoCloseable {
         try {
             log.info("Initialize SessionFactory");
             sessionFactory = new Configuration()
-//                    .addAnnotatedClass(Person.class)
-//                    .addAnnotatedClass(Address.class)
-//                    .addAnnotatedClass(Contact.class)
+                    .addAnnotatedClass(Client.class)
+                    .addAnnotatedClass(Planet.class)
+                    .addAnnotatedClass(Ticket.class)
                     .buildSessionFactory();
         } catch (Exception e) {
             throw new HibernateInitializationException("Failed to build SessionFactory", e);

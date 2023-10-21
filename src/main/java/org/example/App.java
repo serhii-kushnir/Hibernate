@@ -11,7 +11,7 @@ import org.hibernate.SessionFactory;
 @Log4j2
 final class App {
 
-    private App(){
+    private App() {
     }
 
     public static void main(final String[] args) {
