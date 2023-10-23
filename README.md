@@ -6,3 +6,6 @@
 
 # Diagrama UML - DateBase
 ![image](https://github.com/serhii-kushnir/Hibernate/assets/127629681/7020d3bc-8168-4b0c-a5ce-ae135f586dc9)
+
+# WakaTime
+![image](https://github.com/serhii-kushnir/Hibernate/assets/127629681/be990539-575a-41b5-85cf-c3fe61486141)
