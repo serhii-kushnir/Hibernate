@@ -22,14 +22,10 @@ final class App {
              SessionFactory sessionFactory = hibernateUtil.getSessionFactory();
              Session session = sessionFactory.openSession()) {
 
-//            Transaction transaction session.beginTransaction();
-//
-//            transaction.commit();
             log.info("The program is completed");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
     }
 }
 

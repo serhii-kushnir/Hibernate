@@ -2,9 +2,9 @@ package org.example.utils;
 
 import lombok.extern.log4j.Log4j2;
 
-import static org.example.configs.DatabaseConfig.getPassword;
-import static org.example.configs.DatabaseConfig.getUsername;
-import static org.example.configs.DatabaseConfig.getUrl;
+import static org.example.config.DatabaseConfig.getPassword;
+import static org.example.config.DatabaseConfig.getUsername;
+import static org.example.config.DatabaseConfig.getUrl;
 
 @Log4j2
 public final class Flyway {

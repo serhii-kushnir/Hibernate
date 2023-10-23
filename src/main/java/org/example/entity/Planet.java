@@ -4,14 +4,22 @@ import jakarta.persistence.*;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
-@Table(name = "planet")
+@Table(name = "planets")
 @Data
 public class Planet {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "id")
+    private String id;
 
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "fromPlanet", fetch = FetchType.LAZY)
+    private List<Ticket> departures;
+
+    @OneToMany(mappedBy = "toPlanet", fetch = FetchType.LAZY)
+    private List<Ticket> arrivals;
 }
