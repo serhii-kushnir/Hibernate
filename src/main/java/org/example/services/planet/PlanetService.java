@@ -2,26 +2,26 @@ package org.example.services.planet;
 
 import org.example.entity.Planet;
 
-public class PlanetService implements PlanetCrudService {
+public final class PlanetService implements PlanetCrudService {
     private final PlanetCrudServiceImpl planetCrudService = new PlanetCrudServiceImpl();
 
     @Override
-    public void create(Planet planet) {
+    public void create(final Planet planet) {
         planetCrudService.create(planet);
     }
 
     @Override
-    public Planet read(String id) {
+    public Planet read(final String id) {
         return planetCrudService.read(id);
     }
 
     @Override
-    public void update(Planet planet) {
+    public void update(final Planet planet) {
         planetCrudService.update(planet);
     }
 
     @Override
-    public void delete(Planet planet) {
+    public void delete(final Planet planet) {
         planetCrudService.delete(planet);
     }
 }

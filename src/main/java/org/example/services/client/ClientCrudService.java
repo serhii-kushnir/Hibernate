@@ -4,11 +4,11 @@ import org.example.entity.Client;
 
 public interface ClientCrudService {
 
-    void create(Client client);
+    void create(final Client client);
 
-    Client read(Long id);
+    Client read(final Long id);
 
-    void update(Client client);
+    void update(final Client client);
 
-    void delete(Client client);
+    void delete(final Client client);
 }

@@ -4,11 +4,11 @@ import org.example.entity.Planet;
 
 public interface PlanetCrudService {
 
-    void create(Planet planet);
+    void create(final Planet planet);
 
-    Planet read(String id);
+    Planet read(final String id);
 
-    void update(Planet planet);
+    void update(final Planet planet);
 
-    void delete(Planet planet);
+    void delete(final Planet planet);
 }

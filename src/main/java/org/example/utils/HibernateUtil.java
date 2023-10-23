@@ -6,6 +6,7 @@ import lombok.extern.log4j.Log4j2;
 import org.example.entity.Client;
 import org.example.entity.Planet;
 import org.example.entity.Ticket;
+
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -21,9 +22,9 @@ public final class HibernateUtil implements AutoCloseable {
             INSTANCE = new HibernateUtil();
 
             log.info("HibernateUtil initialized successfully");
-        } catch (Exception e) {
+        } catch (java.lang.Exception e) {
             log.error("Failed to initialize HibernateUtil", e);
-            throw new HibernateInitializationException("Failed to initialize HibernateUtil", e);
+            throw new MyOwnRuntimeException("Failed to initialize HibernateUtil", e);
         }
     }
 
@@ -35,8 +36,8 @@ public final class HibernateUtil implements AutoCloseable {
                     .addAnnotatedClass(Planet.class)
                     .addAnnotatedClass(Ticket.class)
                     .buildSessionFactory();
-        } catch (Exception e) {
-            throw new HibernateInitializationException("Failed to build SessionFactory", e);
+        } catch (java.lang.Exception e) {
+            throw new MyOwnRuntimeException("Failed to build SessionFactory", e);
         }
     }
 

@@ -2,25 +2,25 @@ package org.example.services.client;
 
 import org.example.entity.Client;
 
-public class ClientService implements ClientCrudService{
+public final class ClientService implements ClientCrudService {
     private final ClientCrudServiceImpl clientCrudService = new ClientCrudServiceImpl();
     @Override
-    public void create(Client client) {
+    public void create(final Client client) {
         clientCrudService.create(client);
     }
 
     @Override
-    public Client read(Long id) {
+    public Client read(final Long id) {
         return clientCrudService.read(id);
     }
 
     @Override
-    public void update(Client client) {
+    public void update(final Client client) {
         clientCrudService.update(client);
     }
 
     @Override
-    public void delete(Client client) {
+    public void delete(final Client client) {
         clientCrudService.delete(client);
     }
 }

@@ -1,18 +1,18 @@
 package org.example.services.planet;
 
-import org.example.entity.Client;
 import org.example.entity.Planet;
 import org.example.utils.HibernateUtil;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-public class PlanetCrudServiceImpl implements PlanetCrudService {
+public final class PlanetCrudServiceImpl implements PlanetCrudService {
 
     private final SessionFactory sessionFactory = HibernateUtil.getInstance().getSessionFactory();
 
     @Override
-    public void create(Planet planet) {
+    public void create(final Planet planet) {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             session.persist(planet);
@@ -21,14 +21,14 @@ public class PlanetCrudServiceImpl implements PlanetCrudService {
     }
 
     @Override
-    public Planet read(String id) {
+    public Planet read(final String id) {
         try (Session session = sessionFactory.openSession()) {
             return session.get(Planet.class, id);
         }
     }
 
     @Override
-    public void update(Planet planet) {
+    public void update(final Planet planet) {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             session.merge(planet);
@@ -37,7 +37,7 @@ public class PlanetCrudServiceImpl implements PlanetCrudService {
     }
 
     @Override
-    public void delete(Planet planet) {
+    public void delete(final Planet planet) {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             session.remove(planet);

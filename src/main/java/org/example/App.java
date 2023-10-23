@@ -5,6 +5,7 @@ import lombok.extern.log4j.Log4j2;
 import org.example.utils.Flyway;
 import org.example.utils.HibernateUtil;
 
+import org.example.utils.MyOwnRuntimeException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -24,7 +25,7 @@ final class App {
 
             log.info("The program is completed");
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new MyOwnRuntimeException(e.getMessage());
         }
     }
 }

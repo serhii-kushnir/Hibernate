@@ -7,11 +7,11 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-public class ClientCrudServiceImpl implements ClientCrudService {
+public final class ClientCrudServiceImpl implements ClientCrudService {
     private final SessionFactory sessionFactory = HibernateUtil.getInstance().getSessionFactory();
 
     @Override
-    public void create(Client client) {
+    public void create(final Client client) {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             session.persist(client);
@@ -20,14 +20,14 @@ public class ClientCrudServiceImpl implements ClientCrudService {
     }
 
     @Override
-    public Client read(Long id) {
+    public Client read(final Long id) {
         try (Session session = sessionFactory.openSession()) {
             return session.get(Client.class, id);
         }
     }
 
     @Override
-    public void update(Client client) {
+    public void update(final Client client) {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             session.merge(client);
@@ -36,7 +36,7 @@ public class ClientCrudServiceImpl implements ClientCrudService {
     }
 
     @Override
-    public void delete(Client client) {
+    public void delete(final Client client) {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             session.remove(client);
