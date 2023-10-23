@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 class ClientServiceTest {
 
     @Test
-    public void testClientCRUD() {
+     void testClientCRUD() {
         // Create Client
         final ClientService clientService = new ClientService();
         final Client client = new Client();

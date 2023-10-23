@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PlanetServiceTest {
 
     @Test
-    public void testPlanetCRUD() {
+     void testPlanetCRUD() {
         // Create Patient
         final PlanetService planetService = new PlanetService();
         final Planet planet = new Planet();
