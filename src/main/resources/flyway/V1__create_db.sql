@@ -1,5 +1,5 @@
-CREATE DATABASE SpaceTravel;
-USE SpaceTravel;
+CREATE DATABASE space_travel;
+USE space_travel;
 
 CREATE TABLE clients (
     `id` BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -12,9 +12,12 @@ CREATE TABLE planets (
 );
 
 CREATE TABLE tickets (
-    `id` BIGINT AUTO_INCREMENT PRIMARY KEY,
-    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `client_id` INTEGER NOT NULL REFERENCES clients(id),
-    `from_planet_id` VARCHAR(10) NOT NULL REFERENCES planets(id),
-    `to_planet_id` VARCHAR(10) NOT NULL REFERENCES planets(id)
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    client_id BIGINT NOT NULL REFERENCES clients(id),
+    from_planet_id VARCHAR(10) NOT NULL REFERENCES planets(id),
+    to_planet_id VARCHAR(10) NOT NULL REFERENCES planets(id),
+    CONSTRAINT fk_tickets_planets FOREIGN KEY (from_planet_id) REFERENCES planets (id),
+    CONSTRAINT fk_tickets_clients FOREIGN KEY (client_id) REFERENCES clients (id),
+    CONSTRAINT fk_tickets_planets1 FOREIGN KEY (to_planet_id) REFERENCES planets (id)
 );
