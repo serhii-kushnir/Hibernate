@@ -8,4 +8,5 @@
 ![image](https://github.com/serhii-kushnir/Hibernate/assets/127629681/4a305319-00af-4de4-bf43-6256f19e16d0)
 
 # WakaTime
-![image](https://github.com/serhii-kushnir/Hibernate/assets/127629681/be990539-575a-41b5-85cf-c3fe61486141)
+![image](https://github.com/serhii-kushnir/Hibernate/assets/127629681/19367749-47b0-49b8-88da-8beb5ffb945b)
+
